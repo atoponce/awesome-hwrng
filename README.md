@@ -46,7 +46,6 @@ usually via USB, but PCIe, network, and even old-school DE-9 serial.
 | IDQ                     | [Quantis Appliance 4M]  | Network    | N/A           | [4][f083]     | [Beam splitter][3095]               | Closed       | Proprietary           |
 | IDQ                     | [Quantis Appliance 16M] | Network    | N/A           | [16][f083]    | [Beam splitter][3095]               | Closed       | Proprietary           |
 | IDQ                     | [Quantis AIS31]         | PCIe & USB | N/A           | [0.075][f988] | [Beam splitter][3095]               | Closed       | Proprietary           |
-| Intel                   | [Ivy Bridge]            | CPU        | Varies        | [3000][9c29]  | [Johnson-Nyquist noise][9c29]       | Closed       | Mixed                 |
 | Kidekin                 | [DigitalTRNG]           | USB        | N/A           | [2][5fa9]     | [Registerless LFSR][5fa9]           | Closed       | Proprietary           |
 | Moonbase Otago          | [OneRNG]                | USB        | [$40][fe95]   | [0.35][7e61]  | [Avalanche noise][1115]             | [Open][17a3] | [GPLv3][17a3]         |
 | Protego ST              | [SG100 Classic]         | Serial     | [€255][ded5]  | [0.115][ded5] | [Reverse biased zener diode][c6c8]  | Closed       | Proprietary           |
@@ -72,8 +71,12 @@ may also be components for breadboard, solder, or other engineering projects
 
 | Builder                 | Model                   | Interface  | Price         | Mbps          | Entropy                             | Hardware     | Software              |
 | ----------------------- | ----------------------- | :--------: | :-----------: | :-----------: | ----------------------------------- | ------------ | --------------------- |
-| Generic                 | [STM32 Nucleo boards]   | USB        | $12   | 0.56  | Analog-to-digital converter noise | Closed | GPLv3 |
-| TRNG98                  | TRNG9880 | USB | €620 | 0.55 | | Closed | Proprietary |
+| Generic                 | [STM32 Nucleo boards]   | USB        | [$10][95d6]   | 0.56          | ADC                                 | Closed       | GPLv3                 |
+| Intel                   | [Ivy Bridge]            | CPU        | Varies        | [3000][9c29]  | [Johnson-Nyquist noise][9c29]       | Mixed        | Mixed                 |
+| Raspberry Pi            | [Pi 1 Model B+]         | SoC        | $35           | [3.2][4596]   |                                     | Mixed        | Mixed                 |
+| Raspberry Pi            | [Pi 2 Model B]          | SoC        | $35           | [4.2][ade7]   |                                     | Mixed        | Mixed                 |
+| Raspberry Pi            | [Pi 3 Model B+]         | SoC        | $35           | 7             |                                     | Closed       | Proprietary           |
+| TRNG98                  | [TRNG9880]              | SMT        | €620          | 0.5           |                                     | Closed       | Proprietary           |
 
 ## Hardware Security Module HWRNGs
 There are generators provided as part of HSMs, whether they are external USB
@@ -81,6 +84,7 @@ devices, part of a smart device, or shipped in hardware for server platforms
 
 | Builder                 | Model                   | Interface  | Price         | Mbps          | Entropy                             | Hardware     | Software              |
 | ----------------------- | ----------------------- | :--------: | :-----------: | :-----------: | ----------------------------------- | ------------ | --------------------- |
+| Nitrokey                | [Nitrokey HSM]          | USB        | [€59][d19b]   | 0.003         |                                     | Closed       | Mixed                 |
 
 [//]: # (Reference links here- sorted by ID)
 [Alea II]: https://www.araneus.fi/products/alea2/en/
@@ -92,7 +96,11 @@ devices, part of a smart device, or shipped in hardware for server platforms
 [Infinite Noise]: https://www.tindie.com/products/WaywardGeek/infinite-noise-true-random-number-generator/
 [Ivy Bridge]: https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)
 [NeuG]: https://www.gniibe.org/category/fst-01.html
+[Nitrokey HSM]: https://shop.nitrokey.com/shop/product/nitrokey-hsm-7
 [OneRNG]: http://onerng.info/
+[Pi 1 Model B+]: https://www.raspberrypi.org/products/raspberry-pi-1-model-b-plus/
+[Pi 2 Model B]: https://www.raspberrypi.org/products/raspberry-pi-2-model-b/
+[Pi 3 Model B+]: https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/
 [PQ128MS]: https://comscire.com/product/pq128ms/
 [PQ32MS]: https://comscire.com/product/pq32ms/
 [PQ32MU]: https://comscire.com/product/pq32mu/
@@ -109,11 +117,14 @@ devices, part of a smart device, or shipped in hardware for server platforms
 [SG100 Classic]: https://www.protegost.com/product-page/sg100-classic
 [SG100 EVO-USB]: https://www.protegost.com/product-page/sg100-evo
 [SG100 EVO-USB CERT]: https://www.protegost.com/product-page/sg100-evo-cert
+[STM32 Nucleo boards]: https://www.st.com/en/ecosystems/stm32-nucleo.html?querycriteria=productId=SC2003
 [SwiftRNG-LE]: https://tectrolabs.com/swiftrng-le/
 [SwiftRNG]: https://tectrolabs.com/swiftrng-100/
 [SwiftRNG-Pro]: https://tectrolabs.com/swiftrng-pro/
 [TRNG9803]: http://www.trng98.se/serial_trng_9803.html
 [TRNG9815]: http://www.trng98.se/usb_trng_9815.html
+[TRNG9880]: http://www.trng98.se/embedded_trng9880.html
+[TrueEntropy]: https://itunes.apple.com/us/app/trueentropy/id1299321174
 [TrueRNG v2]: http://ubld.it/products/truerng-hardware-random-number-generator/
 [TrueRNG v3]: http://ubld.it/truerng_v3
 [TrueRNGpro]: http://ubld.it/products/truerngpro
@@ -134,6 +145,7 @@ devices, part of a smart device, or shipped in hardware for server platforms
 [36fe]: https://github.com/vault12/TrueEntropy
 [40ff]: http://ubld.it/products/truerngpro
 [448b]: https://www.idquantique.com/random-number-generation/products/quantis-random-number-generator/
+[4596]: https://scruss.com/blog/2013/06/07/well-that-was-unexpected-the-raspberry-pis-hardware-random-number-generator/
 [4683]: https://www.tindie.com/products/WaywardGeek/infinite-noise-true-random-number-generator/
 [49ac]: http://www.trng98.se/trng98_encryption_documents/non-algorithmic%20encryption.pdf
 [5fa9]: https://www.tindie.com/products/kidekin/digitaltrng/
@@ -147,10 +159,12 @@ devices, part of a smart device, or shipped in hardware for server platforms
 [84f9]: https://www.araneus.fi/products/alea2/en/
 [88f0]: https://git.gag.com/?p=hw/chaoskey;a=blob_plain;f=License.pdf;hb=HEAD
 [91fa]: http://www.entropykey.co.uk/tech/
+[95d6]: https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-eval-tools/stm32-mcu-eval-tools/stm32-mcu-nucleo/nucleo-f030r8.html#samplebuy-scroll
 [9c29]: https://software.intel.com/en-us/articles/intel-digital-random-number-generator-drng-software-implementation-guide
 [a173]: https://www.amazon.com/dp/B0072I2240/
 [a538]: https://pthree.org/2012/10/05/the-entropy-key/
 [aa8c]: https://www.hindawi.com/journals/mpe/2013/285373/
+[ade7]: https://random-notes-of-a-sysadmin.blogspot.com/2016/04/is-raspberry-pi-suitable-and-safe-to.html
 [af49]: https://medium.com/vault12/how-to-get-true-randomness-from-your-apple-device-with-particle-physics-and-thermal-entropy-a9d47ca80c9b
 [b31f]: https://tectrolabs.com/swiftrng/
 [b331]: https://github.com/pwarren/rtl-entropy
@@ -158,6 +172,7 @@ devices, part of a smart device, or shipped in hardware for server platforms
 [c384]: https://comscire.com/product/pq4000ks/
 [c6c8]: https://docs.wixstatic.com/ugd/a434f2_15a22f7e064040ceafe58391d6c6e23f.pdf
 [c826]: https://shop.fsf.org/storage-devices/neug-usb-true-random-number-generator
+[d19b]: https://shop.nitrokey.com/shop/product/nitrokey-hsm-7
 [d312]: http://www.bitbabbler.org/buy.html
 [d37a]: https://www.quintessencelabs.com/products/qstream-quantum-true-random-number-generator/
 [de84]: https://www.idquantique.com/shop/online-shop/
