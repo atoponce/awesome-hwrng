@@ -84,7 +84,7 @@ devices, part of a smart device, or shipped in hardware for server platforms
 
 | Builder                 | Model                   | Interface  | Price         | Mbps          | Entropy                             | Hardware     | Software              |
 | ----------------------- | ----------------------- | :--------: | :-----------: | :-----------: | ----------------------------------- | ------------ | --------------------- |
-| Nitrokey                | [Nitrokey HSM]          | USB        | [€59][d19b]   | 0.003         |                                     | Closed       | Mixed                 |
+| Nitrokey                | [Nitrokey HSM]          | USB        | [€59][d19b]   | 0.024         |                                     | Closed       | Mixed                 |
 
 [//]: # (Reference links here- sorted by ID)
 [Alea II]: https://www.araneus.fi/products/alea2/en/
